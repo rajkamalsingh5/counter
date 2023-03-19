@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter</title>
+    <style>
+        html{
+            font-size: 62.5%;
+        }
+        *{
+            margin: 0%;
+            padding: 0;
+        }
+        section{
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            justify-content: space-around;
+           
+            font-weight: bolder;
+
+        }
+        .class1{
+padding-top: 20rem;            
+font-size: 2rem;
+        }
+        .class2{
+padding-top: 20rem;            
+font-size: 2rem;
+        }
+        .class3{
+padding-top: 20rem;            
+font-size: 2rem;
+        }
+        .class1 img{
+            width: 5rem;
+            height: 5rem;
+display: flex;
+flex-direction: column;
+        }
+        .class2 img{
+            width: 5rem;
+            height: 5rem;
+display: flex;
+flex-direction: column;
+        }
+        .class3 img{
+            width: 5rem;
+            height: 5rem;
+display: flex;
+flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="class1">
+<img src="https://tse1.mm.bing.net/th?id=OIP.FiFASn1-AVyY6FuWH-vfrQHaHa&pid=Api&rs=1&c=1&qlt=95&w=92&h=92" alt="" >
+<h2 class="count" data-count="2000">0</h2>
+<span>Discord</span>
+        </div>
+        <div class="class2">
+            <img src="https://tse1.mm.bing.net/th?id=OIP.4Pyg3Ue-y_Db9xUtyxXBtAHaHa&pid=Api&P=0" alt="" >
+            <h2 class="count" data-count="2000">0</h2>
+            <span>Instagram</span>
+        </div>
+        <div class="class3">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.BQk08nwwUlJ1llewv3qIcAHaHa&pid=Api&P=0" alt="" >
+           <h2 class="count" data-count="2100">0</h2>
+            <span>Youtube</span>
+        </div>
+    </section>
+    <script>
+const num=document.querySelectorAll('.count');
+let speed=200;
+num.forEach((num)=>{
+    let target=num.dataset.count;        
+    let initial=+num.innerText;
+let inin=Math.floor(target/speed);
+    const update=()=>{
+
+        initial=initial+inin;
+        num.innerText=initial;
+        if(initial<target)
+        setTimeout(()=>{update()},10);
+    }
+    update();
+})
+        
+    </script>
+</body>
+
+</html>
